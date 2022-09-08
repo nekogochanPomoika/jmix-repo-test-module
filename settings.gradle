@@ -1,0 +1,8 @@
+rootProject.name = 'jmix-repo-test-module-addon'
+
+include 'jmix-repo-test-module'
+include 'jmix-repo-test-module-starter'
+
+rootProject.children.each { p1 ->
+    p1.buildFileName = "${p1.name}.gradle"
+}
