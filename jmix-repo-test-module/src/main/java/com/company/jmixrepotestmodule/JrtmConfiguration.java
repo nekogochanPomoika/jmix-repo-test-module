@@ -1,7 +1,9 @@
 package com.company.jmixrepotestmodule;
 
+import com.company.jmixrepotestmodule.repository.NewEntityRepository;
 import io.jmix.core.annotation.JmixModule;
 import io.jmix.core.impl.scanning.AnnotationScanMetadataReaderFactory;
+import io.jmix.core.repository.EnableJmixDataRepositories;
 import io.jmix.eclipselink.EclipselinkConfiguration;
 import io.jmix.ui.UiConfiguration;
 import io.jmix.ui.sys.UiControllersConfiguration;
@@ -18,6 +20,7 @@ import java.util.Collections;
 @ComponentScan
 @ConfigurationPropertiesScan
 @JmixModule(dependsOn = {EclipselinkConfiguration.class, UiConfiguration.class})
+@EnableJmixDataRepositories(basePackageClasses = NewEntityRepository.class)
 @PropertySource(name = "com.company.jmixrepotestmodule", value = "classpath:/com/company/jmixrepotestmodule/module.properties")
 public class JrtmConfiguration {
 
